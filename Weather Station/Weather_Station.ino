@@ -161,9 +161,9 @@ int8_t ret;
 
   while ((ret = mqtt.connect()) != 0) { // connect will return 0 for connected
        Serial.println(mqtt.connectErrorString(ret));
-       Serial.println("Retrying MQTT connection in 5 seconds...");
+       Serial.println("Retrying MQTT connection in 2 seconds...");
        mqtt.disconnect();
-       delay(2000);  // wait 5 seconds
+       delay(2000);  // wait 2 seconds
   }
   Serial.println("MQTT Connected!");
 }
