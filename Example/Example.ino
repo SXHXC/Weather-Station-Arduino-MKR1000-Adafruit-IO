@@ -62,7 +62,7 @@ void setup() {
     Serial.println(ssid);
     // Connect to WPA/WPA2 network:
     status = WiFi.begin(ssid, pass);
-    // wait 5 seconds for connection:
+    // wait 500 miliseconds for connection:
     delay(500);
   }
 
@@ -82,7 +82,7 @@ void loop() {
   // try to spend your time here
  
   Adafruit_MQTT_Subscribe *subscription;
-  while ((subscription = mqtt.readSubscription(3000))) {
+  while ((subscription = mqtt.readSubscription(3000))) { //Set Timeout
     if (subscription == &onoffbutton) {
       Serial.print(F("Got: "));
       Serial.println((char *)onoffbutton.lastread);
@@ -120,9 +120,9 @@ int8_t ret;
 
   while ((ret = mqtt.connect()) != 0) { // connect will return 0 for connected
        Serial.println(mqtt.connectErrorString(ret));
-       Serial.println("Retrying MQTT connection in 5 seconds...");
+       Serial.println("Retrying MQTT connection in 1 seconds...");
        mqtt.disconnect();
-       delay(1000);  // wait 5 seconds
+       delay(1000);  // wait 1 seconds
   }
   Serial.println("MQTT Connected!");
 }
