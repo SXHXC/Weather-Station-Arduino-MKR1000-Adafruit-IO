@@ -3,15 +3,18 @@
 #include "Adafruit_MQTT.h"
 #include "Adafruit_MQTT_Client.h"
 
-char ssid[] = "84885029";     //  your network SSID (name)
-char pass[] = "1030634853o0XD";  // your network password
+/************************* Wifi Setup *********************************/
+
+char ssid[] = "yourNetwork";     //  your network SSID (name)
+char pass[] = "secretPassword";  // your network password
 int status = WL_IDLE_STATUS;     // the Wifi radio's status
+
 /************************* Adafruit.io Setup *********************************/
 
 #define AIO_SERVER      "io.adafruit.com"
 #define AIO_SERVERPORT  1883
-#define AIO_USERNAME    "SXHXC"
-#define AIO_KEY         "77491e02fca141c5935b71d9e77c9fd4"
+#define AIO_USERNAME    "...your AIO username (see https://accounts.adafruit.com)..."
+#define AIO_KEY         "...your AIO key..."
 
 /************ Global State (you don't need to change this!) ******************/
 
